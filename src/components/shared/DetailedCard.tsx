@@ -34,9 +34,9 @@ export default function DetailedCard({
         className="w-48 h-48 object-cover mr-4 transition-all hover:scale-105"
         loading="lazy"
       />
-      <div className="absolute right-0 w-full bg-white py-2 px-4 flex flex-col items-center justify-center">
-        <span className=" w-16 h-16 "><FaRegHeart /></span>
-        <span className=" w-16 h-16"><MdOutlineLayers /></span>
+      <div className="absolute top-0 right-6 gap-4 flex flex-col items-center justify-center pt-2">
+        <span className="bg-white rounded-full p-2"><FaRegHeart /></span>
+        <span className="bg-white rounded-full p-2"><MdOutlineLayers /></span>
       </div>
       </div>
       <div className="flex-grow text-center lg:text-left">
