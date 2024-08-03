@@ -1,6 +1,6 @@
 import React from "react";
-import { FaWalking, FaCar, FaTrain, FaBuilding } from "react-icons/fa";
-import { MdOutlineSocialDistance } from "react-icons/md";
+import { FaWalking, FaCar, FaTrain, FaBuilding, FaRegHeart } from "react-icons/fa";
+import { MdOutlineLayers, MdOutlineSocialDistance } from "react-icons/md";
 
 interface Props {
   title: string;
@@ -26,14 +26,20 @@ export default function DetailedCard({
   description,
 }: Props) {
   return (
-    <div className="flex p-4 rounded border text-card-foreground shadow-sm gap-3">
+    <div className="flex flex-col items-center lg:items-start lg:flex-row p-4 rounded border text-card-foreground shadow-sm gap-3">
+      <div className=" relative">
       <img
         src={imageUrl}
         alt={title}
         className="w-48 h-48 object-cover mr-4 transition-all hover:scale-105"
         loading="lazy"
       />
-      <div className="flex-grow">
+      <div className="absolute right-0 w-full bg-white py-2 px-4 flex flex-col items-center justify-center">
+        <span className=" w-16 h-16 "><FaRegHeart /></span>
+        <span className=" w-16 h-16"><MdOutlineLayers /></span>
+      </div>
+      </div>
+      <div className="flex-grow text-center lg:text-left">
         <h3 className="text-lg font-semibold">{title}</h3>
         <p className="text-gray-500 text-xs text-wrap w-[400px]">{description}</p>
         <div className="text-gray-500 text-xs flex items-center space-x-4 pt-4">
@@ -68,7 +74,7 @@ export default function DetailedCard({
           </div>
         )}
       </div>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-row items-center lg:items-start lg:flex-col gap-20">
         <p className=" text-gray-500 text-sm">
           From <span className="text-red-500 font-bold ">{price}</span>/week
         </p>

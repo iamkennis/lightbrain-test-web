@@ -48,13 +48,12 @@ export default function ListingCard({
           From <span className="text-red-500 font-bold text-sm">{price}</span>{" "}
           /week
         </p>
-        <div className="flex flex-wrap gap-1 mt-2">
+        {/* <div className="flex flex-wrap gap-1 mt-2"></div> */}
         {cheapest && (
           <div className="mt-2 bg-blue-800 text-white w-full max-w-[200px] rounded px-2 py-1 text-xs">
             {cheapest}
           </div>
         )}
-        </div>
         <div className="text-gray-500 text-xs flex items-center space-x-4 pt-4">
         <span className="flex items-center gap-1">
           <FaWalking className="text-md" />

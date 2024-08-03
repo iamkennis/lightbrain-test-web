@@ -4,6 +4,7 @@ import ImageCard from "./shared/ImageCard";
 import DetailedCard from "./shared/DetailedCard";
 import ListingCard from "./shared/ListingCard";
 import { detailedListings, featuredListings } from "@/constants/data";
+import { FaSortAmountDown, FaSortAmountUp } from "react-icons/fa";
 
 export default function Features() {
   const [sortOrder, setSortOrder] = useState<string>("asc");
@@ -22,7 +23,7 @@ export default function Features() {
   });
 
   return (
-    <main className="grid justify-center items-center pt-12 px-6">
+    <main className="grid justify-center items-center py-12 px-6">
       <article className="text-center">
         <h3 className="text-3xl font-bold">Popular Cities across the Globe</h3>
         <p className="text-md ">
@@ -31,7 +32,7 @@ export default function Features() {
         </p>
       </article>
       <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center lg:grid-cols-4 gap-4">
           {cities.map((city, index) => (
             <ImageCard
               key={index}
@@ -41,26 +42,37 @@ export default function Features() {
           ))}
         </div>
       </div>
+      <article className="text-center my-6">
+        <h3 className="text-3xl font-bold">
+          
+          Accommodations In Popular Cities
+        </h3>
+        <p className="text-md ">
+          Choose a perfect place to call home in top cities
+        </p>
+      </article>
+      
       <div className="p-4">
-        <div className="flex overflow-x-auto py-4 scroll-smooth">
+     
+        <div className="flex flex-col items-center lg:flex-row lg:overflow-x-auto">
           {featuredListings.map((listing, index) => (
             <ListingCard key={index} {...listing} />
           ))}
         </div>
       </div>
-      <div className="w-[1000px] mx-auto space-y-3">
-        <div className="mb-4">
+      <div className="w-full lg:w-[1000px] mx-auto space-y-3">
+        <div className="mb-4 space-x-3">
           <button
             onClick={() => setSortOrder("asc")}
-            className="mr-2 px-4 py-2 bg-blue-500 text-white rounded"
+            className=" bg-transparent text-black"
           >
-            Sort Ascending
+           <FaSortAmountDown />
           </button>
           <button
             onClick={() => setSortOrder("desc")}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className=" bg-transparent text-black"
           >
-            Sort Descending
+            <FaSortAmountUp />
           </button>
         </div>
         {sortedListings.map((listing, index) => (

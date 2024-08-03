@@ -8,14 +8,12 @@ import DetailedCard from "./shared/DetailedCard";
 
 export default function Header() {
   const [property, setProperty] = useState("");
-  const [city, setCity] = useState("");
   const [searchListings, setSearchListings] = useState(detailedListings);
   const [searchPerformed, setSearchPerformed] = useState(false);
 
-  const handleSearch = (property: string, city: string) => {
+  const handleSearch = (property: string) => {
     const filtered = detailedListings.filter((listing) =>
-      listing.title.toLowerCase().includes(property.toLowerCase()) &&
-      listing.description.toLowerCase().includes(city.toLowerCase())
+      listing.title.toLowerCase().includes(property.toLowerCase()) 
     );
     setSearchListings(filtered);
     setSearchPerformed(true);
@@ -46,15 +44,8 @@ export default function Header() {
             onChange={(e) => setProperty(e.target?.value)}
             icons={<Building2 />}
           />
-          <Input
-            type="address"
-            value={city}
-            onChange={(e) => setCity(e.target?.value)}
-            placeholder="Search by City"
-            icons={<Map />}
-          />
           <button
-            onClick={() => handleSearch(property, city)}
+            onClick={() => handleSearch(property)}
             className=" bg-black py-3 px-8 rounded-md text-white hover:bg-accent hover:text-accent-foreground"
           >
             Search
@@ -67,13 +58,7 @@ export default function Header() {
           {searchListings.map((listing, index) => (
             <DetailedCard
               key={index}
-              title={listing.title}
-              imageUrl={listing.imageUrl}
-              price={listing.price}
-              distance={listing.distance}
-              facilities={listing.facilities}
-              description={listing.description}
-              cheapest={listing.cheapest}
+              {...listing}
             />
           ))}
         </div>

@@ -36,24 +36,7 @@ export const featuredListings = [
         train:"10 mins",
         cheapest: "Cheapest in the past one year",
       },
-      {
-        title: "Flat 60, Forsyth House",
-        imageUrl: "/list-5.jpg",
-        price: "£112",
-        walking: "10 mins",
-        car: "5 mins",
-        train:"3 mins",
-        cheapest: "Cheapest in the past three year",
-      },
-      {
-        title: "Flat 90, Forsyth House",
-        imageUrl: "/list-6.jpg",
-        price: "£512",
-        walking: "15 mins",
-        car: "10 mins",
-        train:"5 mins",
-        cheapest: "Cheapest in the past two month",
-      },
+      
   ];
 
 export const detailedListings = [
